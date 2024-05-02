@@ -1,0 +1,35 @@
+<form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
+  <label for="title"></label>
+  <input
+    id="title"
+    type="text"
+    placeholder="Skriv en rubrik..."
+    formControlName="title"
+  />
+  @if (blogForm.get("title")?.invalid && blogForm.get("title")?.touched) {
+  <p class="warning">Du måste skriva in en rubrik!</p>
+  }
+  <label for="content"></label>
+  <textarea
+    name="content"
+    id="content"
+    cols="30"
+    rows="10"
+    formControlName="content"
+  ></textarea>
+  @if (blogForm.get("content")?.invalid && blogForm.get("content")?.touched) {
+  <p class="warning">Du har väl inte glömt att skriva ditt blogginlägg?</p>
+  }
+  <label for="email"></label>
+  <input
+    type="email"
+    name="email"
+    id="email"
+    placeholder="Skriv din e-post..."
+    formControlName="email"
+  />
+  @if (blogForm.get("email")?.invalid && blogForm.get("email")?.touched) {
+  <p class="warning">Hallå? E-posten då?!</p>
+  }
+  <button [disabled]="blogForm.invalid">Publicera</button>
+</form>
