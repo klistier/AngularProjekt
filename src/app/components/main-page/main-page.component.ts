@@ -1,13 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { BlogInputComponent } from './blog-input/blog-input.component';
+import { BlogPost } from '../../core/blogpost.model';
+import { BlogService } from '../../services/blog.service';
+import { BlogComponent } from './blog/blog.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [BlogInputComponent],
+  imports: [BlogInputComponent, BlogComponent, HttpClientModule, CommonModule],
   templateUrl: './main-page.component.html',
-  styleUrl: './main-page.component.css'
+  styleUrl: './main-page.component.css',
 })
-export class MainPageComponent {
+export class MainPageComponent implements OnInit {
+  blogPosts: BlogPost[] = [];
 
+  constructor(private blogService: BlogService) {}
+
+  ngOnInit() {
+    this.fetchBlogPosts();
+  }
+
+  fetchBlogPosts() {
+    this.blogService.fetchBlogPosts().subscribe((post) => {
+      this.blogPosts = post;
+    });
+  }
+
+  addPost(newPost: BlogPost) {
+    this.blogService.addPost(newPost).subscribe((post) => {
+      this.blogPosts.push(post);
+    });
+  }
 }

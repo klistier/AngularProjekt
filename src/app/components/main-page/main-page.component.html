@@ -1,1 +1,2 @@
-<app-blog-input></app-blog-input>
+<app-blog-input (handleAddPost)="addPost($event)"></app-blog-input>
+<app-blog [blogPosts]="blogPosts"></app-blog>

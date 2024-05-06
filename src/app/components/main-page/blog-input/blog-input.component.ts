@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {
   Form,
   FormBuilder,
+  FormGroup,
   FormsModule,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { BlogPost } from '../../../core/blogpost.model';
 
 @Component({
   selector: 'app-blog-input',
@@ -15,8 +17,10 @@ import {
   styleUrl: './blog-input.component.css',
 })
 export class BlogInputComponent {
+  @Output() handleAddPost = new EventEmitter<BlogPost>();
+  @Input() blogPosts: BlogPost[] = [];
   formBuilder: FormBuilder;
-  blogForm;
+  blogForm: FormGroup;
 
   constructor(formBuilder: FormBuilder) {
     this.formBuilder = formBuilder;
@@ -28,6 +32,14 @@ export class BlogInputComponent {
   }
 
   onSubmit() {
-    console.log(this.blogForm.value);
+    if (this.blogForm.valid) {
+      const newPost: BlogPost = {
+        id: Math.floor(Math.random() * 10000),
+        title: this.blogForm.value.title ?? '',
+        content: this.blogForm.value.content ?? '',
+        email: this.blogForm.value.email ?? '',
+      };
+      this.handleAddPost.emit(newPost);
+    }
   }
 }
