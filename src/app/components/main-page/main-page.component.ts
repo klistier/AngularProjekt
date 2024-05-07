@@ -33,4 +33,10 @@ export class MainPageComponent implements OnInit {
       this.blogPosts.push(post);
     });
   }
+
+  deletePost(post: BlogPost) {
+    this.blogService.deletePost(post.id).subscribe(() => {
+      this.blogPosts = this.blogPosts.filter((p) => p.id !== post.id);
+    });
+  }
 }

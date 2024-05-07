@@ -19,7 +19,7 @@ export class BlogService {
     return this.http.post<BlogPost>(this.url, newPost);
   }
 
-  deletePost(id: number): Observable<BlogPost> {
+  deletePost(id: string): Observable<BlogPost> {
     return this.http.delete<BlogPost>(`${this.url}/${id}`);
   }
 }

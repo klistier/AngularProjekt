@@ -7,6 +7,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { v4 as uuidv4 } from 'uuid';
 import { BlogPost } from '../../../core/blogpost.model';
 
 @Component({
@@ -17,7 +18,7 @@ import { BlogPost } from '../../../core/blogpost.model';
   styleUrl: './blog-input.component.css',
 })
 export class BlogInputComponent {
-  @Output() handleAddPost = new EventEmitter<BlogPost>();
+  @Output() onAddPost = new EventEmitter<BlogPost>();
   @Input() blogPosts: BlogPost[] = [];
   formBuilder: FormBuilder;
   blogForm: FormGroup;
@@ -34,12 +35,13 @@ export class BlogInputComponent {
   onSubmit() {
     if (this.blogForm.valid) {
       const newPost: BlogPost = {
-        id: Math.floor(Math.random() * 10000),
+        id: uuidv4(),
         title: this.blogForm.value.title ?? '',
         content: this.blogForm.value.content ?? '',
         email: this.blogForm.value.email ?? '',
       };
-      this.handleAddPost.emit(newPost);
+      this.onAddPost.emit(newPost);
+      this.blogForm.reset();
     }
   }
 }

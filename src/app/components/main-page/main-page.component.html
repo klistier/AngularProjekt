@@ -1,2 +1,2 @@
-<app-blog-input (handleAddPost)="addPost($event)"></app-blog-input>
-<app-blog [blogPosts]="blogPosts"></app-blog>
+<app-blog-input (onAddPost)="addPost($event)"></app-blog-input>
+<app-blog [blogPosts]="blogPosts" (deletePost)="deletePost($event)"></app-blog>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { BlogPost } from '../../../core/blogpost.model';
 import { CommonModule } from '@angular/common';
 
@@ -7,10 +7,13 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './blog.component.html',
-  styleUrl: './blog.component.css'
+  styleUrl: './blog.component.css',
 })
 export class BlogComponent {
   @Input() blogPosts: BlogPost[] = [];
+  @Output() deletePost = new EventEmitter<BlogPost>();
 
-
+  onDeletePost(post: BlogPost) {
+    this.deletePost.emit(post);
+  }
 }
