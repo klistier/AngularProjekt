@@ -8,6 +8,7 @@ import { BlogPost } from '../core/blogpost.model';
 })
 export class BlogService {
   private url = 'http://localhost:3000/posts';
+  blogPosts: BlogPost[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -22,4 +23,9 @@ export class BlogService {
   deletePost(id: string): Observable<BlogPost> {
     return this.http.delete<BlogPost>(`${this.url}/${id}`);
   }
+
+  getPostById(id: string) {
+    return this.blogPosts.find((post) => post.id === id); 
+  }
+
 }

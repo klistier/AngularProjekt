@@ -1,10 +1,16 @@
 {
   "posts": [
     {
-      "id": "c0ef9103-f325-42a9-a299-291b44f3bbb9",
-      "title": "test",
-      "content": "test",
-      "email": "test@test.com"
+      "id": "49311612-f376-46ce-a5d9-3fb4e8605c33",
+      "title": "heeeeej",
+      "content": "hallpååå",
+      "email": "klistier@gmail.com"
+    },
+    {
+      "id": "57e6542d-9c2f-4261-ac95-1bcef2ae09cd",
+      "title": "hallå",
+      "content": "testing",
+      "email": "asd@gmail.com"
     }
   ]
 }

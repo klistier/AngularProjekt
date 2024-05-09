@@ -14,8 +14,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './main-page.component.css',
 })
 export class MainPageComponent implements OnInit {
-  blogPosts: BlogPost[] = [];
 
+  blogPosts: BlogPost[] = [];
   constructor(private blogService: BlogService) {}
 
   ngOnInit() {
@@ -23,8 +23,8 @@ export class MainPageComponent implements OnInit {
   }
 
   fetchBlogPosts() {
-    this.blogService.fetchBlogPosts().subscribe((post) => {
-      this.blogPosts = post;
+    this.blogService.fetchBlogPosts().subscribe((posts) => {
+      this.blogPosts = posts;
     });
   }
 
