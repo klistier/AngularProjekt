@@ -1,24 +1,28 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { BlogPost } from '../../core/blogpost.model';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { BlogService } from '../../services/blog.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-single-post',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, CommonModule],
   templateUrl: './single-post.component.html',
   styleUrl: './single-post.component.css',
 })
-export class SinglePostComponent {
+export class SinglePostComponent implements OnInit {
   post: BlogPost | undefined;
 
-  activatedRoute: ActivatedRoute = inject(ActivatedRoute);
-  BlogService: BlogService = inject(BlogService);
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private blogService: BlogService
+  ) {}
 
-  constructor() {
+  ngOnInit(): void {
     const id: string = this.activatedRoute.snapshot.params['id'];
-    this.post = this.BlogService.getPostById(id);
-    console.log(this.post);
+    this.blogService.getPostById(id).subscribe((post) => {
+      this.post = post;
+    });
   }
 }

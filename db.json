@@ -11,6 +11,12 @@
       "title": "hallå",
       "content": "testing",
       "email": "asd@gmail.com"
+    },
+    {
+      "id": "4d508fc4-4857-42ad-bd68-d3bb029248e8",
+      "title": "Nytt test",
+      "content": "teeeeest",
+      "email": "klistier@gmail.com"
     }
   ]
 }

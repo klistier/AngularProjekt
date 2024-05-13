@@ -1,0 +1,16 @@
+.blog-container{
+    border-top: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.delete-btn{
+    width: 10vw;
+}
+
+h3{
+    font-size: 2rem;
+    color: rgba(22, 121, 22, 0.651);
+}

@@ -1,7 +1,7 @@
-<div *ngFor="let post of blogPosts">
+<div class="blog-container" *ngFor="let post of blogPosts">
   <h3>{{ post.title }}</h3>
   <p>{{ post.content }}</p>
-  <p>{{ post.email }}</p>
-  <a [routerLink]="['/posts', post.id]" >Gå till inlägg</a>
-  <button (click)="onDeletePost(post)">Ta bort inlägg</button>
+  <p>E-post: {{ post.email }}</p>
+  <a [routerLink]="['/posts', post.id]">Gå till inlägg</a>
+  <button class="delete-btn" (click)="onDeletePost(post)">Ta bort inlägg</button>
 </div>

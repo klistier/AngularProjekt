@@ -12,7 +12,7 @@ export class BlogService {
 
   constructor(private http: HttpClient) {}
 
-  fetchBlogPosts(): Observable<BlogPost[]> {
+  fetchBlogPosts() {
     return this.http.get<BlogPost[]>(this.url);
   }
 
@@ -24,8 +24,7 @@ export class BlogService {
     return this.http.delete<BlogPost>(`${this.url}/${id}`);
   }
 
-  getPostById(id: string) {
-    return this.blogPosts.find((post) => post.id === id); 
+  getPostById(id: string): Observable<BlogPost | undefined>  {
+    return this.http.get<BlogPost>(`${this.url}/${id}`);
   }
-
 }

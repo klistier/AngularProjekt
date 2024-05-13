@@ -1,3 +1,23 @@
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+#title,
+#email{
+    width: 50vw;
+    height: 3rem;
+}
+
+#content{
+    width: 50vw;
+    height: 10rem;
+}
+
 .warning{
     color: red;
 }
+

@@ -27,7 +27,6 @@ export class MainPageComponent implements OnInit {
       this.blogPosts = posts;
     });
   }
-
   addPost(newPost: BlogPost) {
     this.blogService.addPost(newPost).subscribe((post) => {
       this.blogPosts.push(post);
