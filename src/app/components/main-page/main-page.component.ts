@@ -5,11 +5,12 @@ import { BlogService } from '../../services/blog.service';
 import { BlogComponent } from './blog/blog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { NavComponent } from '../nav/nav.component';
 
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [BlogInputComponent, BlogComponent, HttpClientModule, CommonModule],
+  imports: [BlogInputComponent, BlogComponent, NavComponent, HttpClientModule, CommonModule],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css',
 })

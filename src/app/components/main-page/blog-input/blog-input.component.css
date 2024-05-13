@@ -1,7 +1,12 @@
+.input-container{
+    display: flex;
+    justify-content: center;
+}
+
 form{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-start;
     gap: 0.5rem;
 }
