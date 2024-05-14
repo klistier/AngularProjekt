@@ -8,12 +8,14 @@ import {
   Validators,
 } from '@angular/forms';
 import { v4 as uuidv4 } from 'uuid';
-import { BlogPost } from '../../../core/blogpost.model';
+import { BlogPost } from '../../core/blogpost.model';
+import { NavComponent } from '../nav/nav.component';
+import { BlogService } from '../../services/blog.service';
 
 @Component({
   selector: 'app-blog-input',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, NavComponent],
   templateUrl: './blog-input.component.html',
   styleUrl: './blog-input.component.css',
 })
@@ -23,7 +25,7 @@ export class BlogInputComponent {
   formBuilder: FormBuilder;
   blogForm: FormGroup;
 
-  constructor(formBuilder: FormBuilder) {
+  constructor(formBuilder: FormBuilder, private blogService: BlogService) {
     this.formBuilder = formBuilder;
     this.blogForm = this.formBuilder.group({
       title: ['', [Validators.required, Validators.maxLength(30)]],
@@ -32,7 +34,7 @@ export class BlogInputComponent {
     });
   }
 
-  onSubmit() {
+  addPost() {
     if (this.blogForm.valid) {
       const newPost: BlogPost = {
         id: uuidv4(),
@@ -40,7 +42,9 @@ export class BlogInputComponent {
         content: this.blogForm.value.content ?? '',
         email: this.blogForm.value.email ?? '',
       };
-      this.onAddPost.emit(newPost);
+      this.blogService.addPost(newPost).subscribe((post) => {
+        this.blogPosts.push(post);
+      });
       this.blogForm.reset();
     }
   }

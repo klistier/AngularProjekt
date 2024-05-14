@@ -3,9 +3,7 @@
   <p>{{ post.content }}</p>
   <div class="btn-group">
     <p class="email">E-post: {{ post.email }}</p>
-    <a [routerLink]="['/posts', post.id]">Gå till inlägg</a>
-    <button class="delete-btn" (click)="onDeletePost(post)">
-      Ta bort inlägg
-    </button>
+    <button class="btn white" [routerLink]="['/posts', post.id]">Gå till inlägg</button>
+    <button class="btn black" (click)="onDeletePost(post)">Ta bort inlägg</button>
   </div>
 </div>

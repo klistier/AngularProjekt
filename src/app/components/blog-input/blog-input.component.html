@@ -1,5 +1,6 @@
+<app-nav></app-nav>
 <div class="input-container">
-  <form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="blogForm" (ngSubmit)="addPost()">
     <label for="title">Titel</label>
     <input
       id="title"
