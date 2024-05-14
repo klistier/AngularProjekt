@@ -3,4 +3,5 @@ export interface BlogPost {
   title: string;
   content: string;
   email: string;
+  date: string;
 }

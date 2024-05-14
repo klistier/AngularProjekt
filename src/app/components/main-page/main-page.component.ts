@@ -5,11 +5,12 @@ import { BlogComponent } from './blog/blog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { NavComponent } from '../nav/nav.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [BlogComponent, NavComponent, HttpClientModule, CommonModule],
+  imports: [BlogComponent, NavComponent, HttpClientModule, CommonModule, FooterComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css',
 })

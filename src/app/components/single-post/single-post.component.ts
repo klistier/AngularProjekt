@@ -3,11 +3,12 @@ import { BlogPost } from '../../core/blogpost.model';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { BlogService } from '../../services/blog.service';
 import { CommonModule } from '@angular/common';
+import { NavComponent } from '../nav/nav.component';
 
 @Component({
   selector: 'app-single-post',
   standalone: true,
-  imports: [RouterLink, CommonModule],
+  imports: [RouterLink, CommonModule, NavComponent],
   templateUrl: './single-post.component.html',
   styleUrl: './single-post.component.css',
 })

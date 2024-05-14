@@ -1,9 +1,14 @@
 <div class="blog-container" *ngFor="let post of blogPosts">
   <h3>{{ post.title }}</h3>
-  <p>{{ post.content }}</p>
+  <p class="content">{{ post.content }}</p>
   <div class="btn-group">
-    <p class="email">E-post: {{ post.email }}</p>
-    <button class="btn white" [routerLink]="['/posts', post.id]">Gå till inlägg</button>
-    <button class="btn black" (click)="onDeletePost(post)">Ta bort inlägg</button>
+    <p>{{ post.date }}</p>
+    <p class="email">Författare: {{ post.email }}</p>
+    <button class="btn white" [routerLink]="['/posts', post.id]">
+      Gå till inlägg
+    </button>
+    <button class="btn black" (click)="onDeletePost(post)">
+      Ta bort inlägg
+    </button>
   </div>
 </div>

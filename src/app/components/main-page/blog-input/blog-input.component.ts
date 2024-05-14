@@ -8,14 +8,15 @@ import {
   Validators,
 } from '@angular/forms';
 import { v4 as uuidv4 } from 'uuid';
-import { BlogPost } from '../../core/blogpost.model';
-import { NavComponent } from '../nav/nav.component';
-import { BlogService } from '../../services/blog.service';
+import { BlogPost } from '../../../core/blogpost.model';
+import { NavComponent } from '../../nav/nav.component';
+import { BlogService } from '../../../services/blog.service';
+import { FooterComponent } from '../../footer/footer.component';
 
 @Component({
   selector: 'app-blog-input',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, NavComponent],
+  imports: [FormsModule, ReactiveFormsModule, NavComponent, FooterComponent],
   templateUrl: './blog-input.component.html',
   styleUrl: './blog-input.component.css',
 })
@@ -41,6 +42,7 @@ export class BlogInputComponent {
         title: this.blogForm.value.title ?? '',
         content: this.blogForm.value.content ?? '',
         email: this.blogForm.value.email ?? '',
+        date: new Date().toLocaleString('sv-SE'),
       };
       this.blogService.addPost(newPost).subscribe((post) => {
         this.blogPosts.push(post);

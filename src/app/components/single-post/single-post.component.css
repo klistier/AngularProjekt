@@ -1,0 +1,65 @@
+.blog-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .container{
+    display: flex;
+    align-items: center;
+  }
+  
+  .content{
+    margin: 0 auto;
+    max-width: 700px;
+    line-height: 2;
+  }
+  
+  .delete-btn {
+    width: 10vw;
+  }
+  
+  h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: rgba(22, 121, 22, 0.651);
+    padding-top: 1.3rem;
+  }
+  
+  p,
+  h3,
+  button,
+  a {
+    margin: 0 15px;
+  }
+  
+  .btn{
+      font-weight: 560;
+      transition: all 300ms ease;
+      padding: 1rem;
+      width: 8rem;
+      border: none;
+      border-radius: 2rem;
+      box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
+      margin: 2rem 0;
+      text-align: center;
+  }
+  
+  .white{
+      background-color: white;
+  }
+  
+  .black{
+      background-color: rgba(0, 0, 0, 0.712);
+      color: white;
+  }
+  
+  .btn-group{
+      text-align: center;
+  }
+  
+  .email{
+      margin: 15px 0;
+  }
