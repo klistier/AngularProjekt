@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BlogPost } from '../core/blogpost.model';
+import { BlogComment } from '../core/blogcomment.model';
 
 @Injectable({
   providedIn: 'root',
@@ -24,7 +25,13 @@ export class BlogService {
     return this.http.delete<BlogPost>(`${this.url}/${id}`);
   }
 
-  getPostById(id: string): Observable<BlogPost | undefined>  {
+  getPostById(id: string): Observable<BlogPost | undefined> {
     return this.http.get<BlogPost>(`${this.url}/${id}`);
+  }
+
+  addComment(post: BlogPost, newComment: BlogComment): Observable<BlogComment> {
+    return this.http.post<BlogComment>(`${this.url}/${post.id}`, {
+      comments: [...(post.comments || []), newComment],
+    });
   }
 }

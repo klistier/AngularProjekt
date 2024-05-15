@@ -5,28 +5,45 @@
       "title": "Teknologins Påverkan på Utbildning",
       "content": "Teknologin har revolutionerat sättet utbildning levereras och konsumeras. Från onlinekurser till interaktiva läromedel har teknologin gjort utbildning mer tillgänglig och engagerande. I det här blogginlägget utforskar vi olika sätt teknologin förvandlar utbildningen och dess påverkan på studenternas inlärningserfarenheter.",
       "email": "teknoviking@gmail.com",
-      "date": "2024-05-14 10:32:41"
+      "date": "2024-05-14 10:32:41",
+      "comments": [
+        {
+          "id": "1abc",
+          "content": "This is a comment",
+          "name": "John Doe",
+          "date": "2024-05-15T10:00:00Z"
+        },
+        {
+          "id": "2dsa",
+          "content": "Another comment",
+          "name": "Jane Doe",
+          "date": "2024-05-15T11:00:00Z"
+        }
+      ]
     },
     {
       "id": "12a710c2-9425-46cb-93ff-8dcb00ea35c5",
       "title": "Utforska Hållbart Boende: Tips för en Grönare Livsstil",
       "content": "Medan oro för klimatförändringar fortsätter att växa söker många individer efter sätt att leva mer hållbart. I det här blogginlägget ger vi praktiska tips och idéer för att anta en grönare livsstil. Från att minska avfall till att spara energi finns det många små förändringar vi kan göra för att minska vårt miljöavtryck och bidra till en friskare planet.",
       "email": "greta.thunberg@gmail.com",
-      "date": "2024-05-14 13:32:41"
+      "date": "2024-05-14 13:32:41",
+      "comments": []
     },
     {
       "id": "12a710c2-9425-46cb-93ff-8dcb00ea35c6",
       "title": "Framväxten av Distansarbete: Att Navigera i Framtidens Arbete",
       "content": "COVID-19-pandemin accelererade övergången till distansarbete, vilket fick många företag att anta flexibla arbetsarrangemang. I det här blogginlägget diskuterar vi fördelarna och utmaningarna med distansarbete, samt strategier för att effektivt hantera distanslag. Vi utforskar även distansarbetets långsiktiga konsekvenser för arbetslivet och dess påverkan på anställdas produktivitet och välbefinnande.",
       "email": "antivaxxer1337@gmail.com",
-      "date": "2024-05-14 17:32:41"
+      "date": "2024-05-14 17:32:41",
+      "comments": []
     },
     {
       "id": "12a710c2-9425-46cb-93ff-8dcb00ea35c7",
       "title": "Utforska Mindfulness: Övningar för Stressreducering och Välmående",
       "content": "Mindfulness har blivit populärt som ett kraftfullt verktyg för att hantera stress och främja övergripande välmående. I det här blogginlägget fördjupar vi oss i begreppet mindfulness och dess fördelar för mental hälsa. Vi delar praktiska mindfulness-övningar och tekniker som läsarna kan integrera i sin dagliga tillvaro för att odla större medvetenhet, motståndskraft och inre frid.",
       "email": "kallekofot@gmail.com",
-      "date": "2024-05-14 20:32:41"
+      "date": "2024-05-14 20:32:41",
+      "comments": []
     }
   ]
 }

@@ -8,3 +8,18 @@
     <button class="btn white" [routerLink]="''">Tillbaka</button>
   </div>
 </div>
+<div class="comment-section">
+  <form [formGroup]="commentForm" (ngSubmit)="submitComment()">
+    <label for="comment">Skriv en kommentar: </label>
+    <textarea name="comment" id="comment" formControlName="comment"></textarea>
+    <label for="name">Namn:</label>
+    <input type="text" name="name" id="name" formControlName="name" />
+    <button [disabled]="commentForm.invalid">Kommentera</button>
+  </form>
+  <h4>Kommentarer</h4>
+  <div class="comments" *ngFor="let comment of post?.comments">
+    <p>{{ comment.date }}</p>
+    <p>{{ comment.content }}</p>
+    <p>{{ comment.name }}</p>
+  </div>
+</div>
