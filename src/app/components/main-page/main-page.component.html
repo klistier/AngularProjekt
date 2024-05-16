@@ -1,3 +1,4 @@
 <app-nav></app-nav>
 <app-blog [blogPosts]="blogPosts" (deletePost)="deletePost($event)"></app-blog>
+<app-blog-input (onAddPost)="onAddPost($event)"></app-blog-input>
 <app-footer></app-footer>

@@ -45,7 +45,7 @@ export class BlogInputComponent {
         date: new Date().toLocaleString('sv-SE'),
       };
       this.blogService.addPost(newPost).subscribe((post) => {
-        this.blogPosts.push(post);
+        this.onAddPost.emit(post);
       });
       this.blogForm.reset();
     }

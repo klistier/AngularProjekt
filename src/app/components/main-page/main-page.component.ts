@@ -6,11 +6,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { NavComponent } from '../nav/nav.component';
 import { FooterComponent } from '../footer/footer.component';
+import { BlogInputComponent } from './blog-input/blog-input.component';
 
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [BlogComponent, NavComponent, HttpClientModule, CommonModule, FooterComponent],
+  imports: [
+    BlogComponent,
+    NavComponent,
+    HttpClientModule,
+    CommonModule,
+    FooterComponent,
+    BlogInputComponent,
+  ],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css',
 })
@@ -32,5 +40,9 @@ export class MainPageComponent implements OnInit {
     this.blogService.deletePost(post.id).subscribe(() => {
       this.blogPosts = this.blogPosts.filter((p) => p.id !== post.id);
     });
+  }
+
+  onAddPost(newPost: BlogPost) {
+    this.blogPosts.push(newPost);
   }
 }
