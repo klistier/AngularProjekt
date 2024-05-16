@@ -1,7 +1,7 @@
 main{
     background: linear-gradient(to top, #acd6c69a, #ffffff10);
     margin: 0 auto;
-    width: 80vw;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
