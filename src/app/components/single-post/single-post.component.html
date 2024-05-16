@@ -8,3 +8,27 @@
     <button class="btn white" [routerLink]="''">Tillbaka</button>
   </div>
 </div>
+<form
+  [formGroup]="commentForm"
+  (ngSubmit)="submitComment()"
+  class="comment-form"
+>
+  <h3>Kommentarer</h3>
+  <div *ngFor="let comment of comments" class="content comments">
+    <p>{{ comment.content }}</p>
+    <p class="small">Skrivet av: {{ comment.name }}</p>
+    <p class="small date">Datum: {{ comment.date }}</p>
+  </div>
+  <div class="input-container">
+    <label for="comment">Kommentera: </label>
+    <textarea name="comment" id="comment" formControlName="comment"></textarea>
+  </div>
+  <div class="input-container">
+    <label for="name">Namn: </label>
+    <input type="text" name="name" id="name" formControlName="name" />
+  </div>
+  <button class="btn" type="submit" [disabled]="commentForm.invalid">
+    Skicka kommentar
+  </button>
+</form>
+<app-footer></app-footer>
