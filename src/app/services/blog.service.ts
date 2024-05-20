@@ -8,7 +8,6 @@ import { BlogPost } from '../core/blogpost.model';
 })
 export class BlogService {
   private url = 'http://localhost:3000/posts';
-  blogPosts: BlogPost[] = [];
 
   constructor(private http: HttpClient) {}
 

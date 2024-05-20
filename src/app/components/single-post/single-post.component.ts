@@ -25,7 +25,7 @@ import { FooterComponent } from '../footer/footer.component';
     NavComponent,
     FormsModule,
     ReactiveFormsModule,
-    FooterComponent
+    FooterComponent,
   ],
   templateUrl: './single-post.component.html',
   styleUrl: './single-post.component.css',
@@ -49,8 +49,14 @@ export class SinglePostComponent implements OnInit {
 
   ngOnInit(): void {
     const id: string = this.activatedRoute.snapshot.params['id'];
-    this.blogService.getPostById(id).subscribe((post) => {
-      this.post = post;
+    this.blogService.getPostById(id).subscribe({
+      next: (post: BlogPost | undefined) => {
+        this.post = post;
+      },
+      error: (error: any) => {
+        alert('Något gick fel! Försök igen!');
+        console.log(error);
+      },
     });
   }
 

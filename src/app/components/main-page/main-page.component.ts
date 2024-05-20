@@ -31,14 +31,26 @@ export class MainPageComponent implements OnInit {
   }
 
   fetchBlogPosts() {
-    this.blogService.fetchBlogPosts().subscribe((posts) => {
-      this.blogPosts = posts;
+    this.blogService.fetchBlogPosts().subscribe({
+      next: (posts: BlogPost[]) => {
+        this.blogPosts = posts;
+      },
+      error: (error: any) => {
+        alert('Något gick fel! Försök igen!');
+        console.log(error);
+      },
     });
   }
 
   deletePost(post: BlogPost) {
-    this.blogService.deletePost(post.id).subscribe(() => {
-      this.blogPosts = this.blogPosts.filter((p) => p.id !== post.id);
+    this.blogService.deletePost(post.id).subscribe({
+      next: () => {
+        this.blogPosts = this.blogPosts.filter((p) => p.id !== post.id);
+      },
+      error: (error: any) => {
+        alert('Något gick fel! Försök igen!');
+        console.log(error);
+      },
     });
   }
 

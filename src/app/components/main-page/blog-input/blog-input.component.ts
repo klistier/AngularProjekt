@@ -39,13 +39,19 @@ export class BlogInputComponent {
     if (this.blogForm.valid) {
       const newPost: BlogPost = {
         id: uuidv4(),
-        title: this.blogForm.value.title ?? '',
-        content: this.blogForm.value.content ?? '',
-        email: this.blogForm.value.email ?? '',
+        title: this.blogForm.value.title,
+        content: this.blogForm.value.content,
+        email: this.blogForm.value.email,
         date: new Date().toLocaleString('sv-SE'),
       };
-      this.blogService.addPost(newPost).subscribe((post) => {
-        this.onAddPost.emit(post);
+      this.blogService.addPost(newPost).subscribe({
+        next: (post: BlogPost) => {
+          this.onAddPost.emit(post);
+        },
+        error: (error: any) => {
+          alert('Något gick fel! Försök igen!');
+          console.log(error);
+        },
       });
       this.blogForm.reset();
     }
