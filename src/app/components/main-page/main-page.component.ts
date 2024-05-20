@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { BlogPost } from '../../core/blogpost.model';
 import { BlogService } from '../../services/blog.service';
 import { BlogComponent } from './blog/blog.component';
-import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { NavComponent } from '../nav/nav.component';
 import { FooterComponent } from '../footer/footer.component';
@@ -14,7 +13,6 @@ import { BlogInputComponent } from './blog-input/blog-input.component';
   imports: [
     BlogComponent,
     NavComponent,
-    HttpClientModule,
     CommonModule,
     FooterComponent,
     BlogInputComponent,
